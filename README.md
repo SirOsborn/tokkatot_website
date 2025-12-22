@@ -64,7 +64,6 @@ npm run preview
 
 This project uses:
 - React with TypeScript for type safety
-- ESLint for code quality
 - Vite for fast development and optimized builds
 
 ## Contact
