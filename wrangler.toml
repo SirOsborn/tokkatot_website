@@ -1,0 +1,23 @@
+# Cloudflare Workers Configuration for Tokkatot Website
+# This worker handles the /api/telegram endpoint for the static site
+
+name = "tokkatot-website-api"
+main = "worker.js"
+compatibility_date = "2024-12-26"
+
+# Routes - matches /api/* on your domain
+# Update "tokkatot.aztrolabe.com" to your actual domain
+routes = [
+  { pattern = "tokkatot.aztrolabe.com/api/*", zone_name = "aztrolabe.com" }
+]
+
+# Environment variables (secrets)
+# Set these using: wrangler secret put TELEGRAM_BOT_TOKEN
+# wrangler secret put TELEGRAM_CHAT_ID
+# wrangler secret put TELEGRAM_TOPIC_ID (optional)
+[env.production]
+vars = { }
+
+# Development configuration
+[env.development]
+vars = { }

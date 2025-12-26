@@ -48,5 +48,10 @@ Thumbs.db
 # Cache
 .cache
 .parcel-cache
+
+# Wrangler (Cloudflare Workers)
+.wrangler
+.dev.vars
+wrangler.toml.backup
 .eslintcache
 .stylelintcache

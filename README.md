@@ -14,7 +14,8 @@ Tokkatot provides innovative smart solutions that integrate IoT, AI and Automati
 - ⚡ **Fast Performance**: Built with Vite and React 19
 - 🎭 **Dynamic Backgrounds**: Custom background images with smoky greenish overlays
 - 👥 **Team Showcase**: Dark-themed floating portraits with glowing platforms
-- 📲 **Telegram Integration**: Contact form messages sent directly to Telegram group (fully working)
+- 📲 **Telegram Integration**: Contact form messages sent directly to Telegram via Cloudflare Workers
+- ☁️ **Serverless API**: Cloudflare Workers handle backend - no Node.js server required
 - ✨ **Modern Glassmorphic Form**: Professional contact form with blur effects and smooth animations
 - 🎯 **Animated SVG Icons**: Professional animated icons throughout the site
 - ✨ **Interactive Effects**: Modern hover effects, smooth transitions, and micro-interactions
@@ -78,11 +79,11 @@ Tokkatot provides innovative smart solutions that integrate IoT, AI and Automati
 
 - **Framework**: React 19.2.0 with TypeScript 5.9.3
 - **Build Tool**: Vite 7.2.5 (Rolldown experimental)
-  - Configured with proxy for API requests during development
-  - Forwards `/api/*` to `http://localhost:3000`
-- **Backend**: Express.js 5.2.1 for API and production serving
-  - Telegram Bot integration (native HTTPS, no external libraries)
-  - Environment-based configuration via `.env`
+- **Backend**: Cloudflare Workers (Serverless)
+  - Handles `/api/telegram` endpoint on the edge
+  - Telegram Bot integration (native fetch API)
+  - Zero cold starts, globally distributed
+  - Free tier: 100,000 requests/day
 - **Internationalization**: i18next + react-i18next (EN, KM, ZH)
 - **Fonts**: Inter (English), Kontumruy (Khmer), Noto Sans SC (Chinese)
 - **Styling**: CSS3 with modern features:
