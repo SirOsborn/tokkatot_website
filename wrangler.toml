@@ -1,7 +1,7 @@
 # Cloudflare Workers Configuration for Tokkatot Website
 # This worker handles the /api/telegram endpoint for the static site
 
-name = "tokkatot-website-api"
+name = "tokkatot-website"
 main = "worker.js"
 compatibility_date = "2024-12-26"
 
