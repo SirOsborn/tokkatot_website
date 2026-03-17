@@ -54,25 +54,32 @@ const FeatureItem = ({ icon, title, description, features, index, colorClass, is
   return (
     <div 
       ref={itemRef} 
-      className={`feature-card-item ${isReversed ? 'reversed' : ''}`}
+      className={`feature-item ${isReversed ? 'reversed' : ''} ${colorClass}`}
     >
-      <div className="feature-card-visual">
-        <div className="feature-image-wrapper">
-          <img src={image} alt={title} className="feature-main-photo" />
-          <div className={`feature-card-glow ${colorClass}`}></div>
+      <div className="feature-visual">
+        <div className="feature-image-container-outer">
+          <div className="feature-image-wrapper">
+            <img src={image} alt={title} className="feature-main-image" />
+          </div>
+          <div className="feature-icon-large">
+            {icon}
+            <div className="feature-number">0{index + 1}</div>
+          </div>
         </div>
       </div>
       
-      <div className="feature-card-content">
-        <div className="feature-badge-mini">
-          {icon}
-          <span className="feature-index">0{index + 1}</span>
+      <div className="feature-details">
+        <div className="feature-header">
+          <h3>{title}</h3>
+          <div className={`feature-line ${colorClass}`}></div>
         </div>
-        <h3 className="feature-card-title">{title}</h3>
-        <p className="feature-card-desc">{description}</p>
-        <div className="feature-card-tags">
+        <p className="feature-description">{description}</p>
+        <div className="feature-highlights">
           {features.map((feature, idx) => (
-            <span key={idx} className={`feature-tag ${colorClass}`}>{feature}</span>
+            <div key={idx} className="highlight-item">
+              <div className={`highlight-dot ${colorClass}`}></div>
+              <span>{feature}</span>
+            </div>
           ))}
         </div>
       </div>
@@ -119,7 +126,14 @@ const FeaturesPage = () => {
   ];
 
   return (
-    <div className="features-section-new">
+    <section id="features" className="features">
+      <div className="features-background">
+        <img src={coolingFan} alt="" className="feature-bg-image" />
+        <img src={feeding} alt="" className="feature-bg-image" />
+        <img src={manureSystem} alt="" className="feature-bg-image" />
+        <img src={chickenFarm} alt="" className="feature-bg-image" />
+      </div>
+      
       <div className="container">
         <div className="section-header">
           <span className="section-badge">{t('features.badge')}</span>
@@ -129,7 +143,8 @@ const FeaturesPage = () => {
           </p>
         </div>
         
-        <div className="features-cards-stack">
+        <div className="features-showcase">
+          <div className="connecting-line"></div>
           {featuresData.map((feature, index) => (
             <FeatureItem 
               key={index} 
@@ -140,7 +155,7 @@ const FeaturesPage = () => {
           ))}
         </div>
 
-        <div className="central-hub-v2">
+        <div className="central-hub">
           <div className="hub-content">
             <div className="hub-icon-wrapper">
               <CentralHubIcon />
@@ -207,15 +222,13 @@ const FeaturesPage = () => {
               <div className="gallery-item glass-effect">
                 <img src={chickenFarm} alt="Chicken Farm Work" />
                 <div className="gallery-caption">Daily Monitoring</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</section>
   );
 };
-
-export default FeaturesPage;
 
 export default FeaturesPage;

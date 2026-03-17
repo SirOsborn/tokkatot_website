@@ -73,7 +73,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="contact" style={{ paddingTop: '8rem', paddingBottom: '8rem' }}>
+    <div className="contact" style={{ paddingTop: '4rem', paddingBottom: '4rem' }}>
       <div className="container">
         <div className="section-header">
           <h2 className="section-title">{t('contact.title')}</h2>

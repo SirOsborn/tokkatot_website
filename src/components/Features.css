@@ -149,21 +149,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 300px; /* Reduced from 400px */
+  height: 420px; /* Adjusted for better visual balance */
+}
+
+.feature-image-container-outer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.feature-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.feature-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Back to cover but with better container ratio */
+  transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.feature-item:hover .feature-main-image {
+  transform: scale(1.05);
 }
 
 .feature-icon-large {
-  position: relative;
-  width: 220px; /* Reduced from 280px */
-  height: 220px; /* Reduced from 280px */
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 160px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(32, 163, 158, 0.05);
+  background: var(--glass-bg);
   border-radius: 50%;
-  border: 2px solid rgba(32, 163, 158, 0.2);
-  backdrop-filter: blur(20px);
-  transition: all 0.5s ease;
+  border: 2px solid var(--glass-border);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  z-index: 20;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.feature-item.reversed .feature-icon-large {
+  right: auto;
+  left: -20px;
 }
 
 .feature-item:hover .feature-icon-large {
@@ -603,8 +641,8 @@
 
 /* Farmer Support & Testing Section */
 .farmer-support-section {
-  margin-top: 5rem;
-  padding-bottom: 4rem;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
 }
 
 .farmer-showcase-grid {
@@ -723,13 +761,13 @@
 .gallery-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Changed from cover to reduce 'zoomed in' look */
+  object-fit: cover; /* Changed back to cover as requested by user */
   background: rgba(0,0,0,0.2);
   transition: transform 0.5s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .gallery-caption {

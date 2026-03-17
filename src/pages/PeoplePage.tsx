@@ -113,42 +113,6 @@ const PeoplePage = () => {
           </div>
         </div>
 
-        {/* Team Contact Form Section */}
-        <div className="team-contact-section">
-          <div className="section-header">
-            <h2 className="section-title">Connect with Our Team</h2>
-            <p className="section-subtitle">Have a specific question for our founders? Reach out directly.</p>
-          </div>
-          
-          <div className="team-contact-form-wrapper glass-effect">
-            <form className="team-contact-form">
-              <div className="form-row">
-                <div className="form-group">
-                  <label htmlFor="team-name">Name</label>
-                  <input type="text" id="team-name" placeholder="Your Name" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="team-email">Email</label>
-                  <input type="email" id="team-email" placeholder="Your Email" />
-                </div>
-              </div>
-              <div className="form-group">
-                <label htmlFor="team-subject">Subject</label>
-                <select id="team-subject">
-                  <option value="general">General Inquiry</option>
-                  <option value="partnership">Partnership Opportunity</option>
-                  <option value="technical">Technical Support</option>
-                  <option value="investment">Investment Inquiry</option>
-                </select>
-              </div>
-              <div className="form-group">
-                <label htmlFor="team-message">Message</label>
-                <textarea id="team-message" rows={5} placeholder="How can we help you?"></textarea>
-              </div>
-              <button type="submit" className="btn-primary">Send Message to Team</button>
-            </form>
-          </div>
-        </div>
       </div>
     </div>
   );

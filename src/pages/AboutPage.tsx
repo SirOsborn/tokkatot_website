@@ -109,7 +109,7 @@ const AboutPage = () => {
             <div className="about-visual-side">
               <div className="visual-card">
                 <img 
-                  src={new URL('../assets/our_testing.JPG', import.meta.url).href} 
+                  src={new URL('../assets/Farm_validate.jpg', import.meta.url).href} 
                   alt="Tokkatot Testing" 
                   className="visual-image"
                 />

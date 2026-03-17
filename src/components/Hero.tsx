@@ -1,10 +1,22 @@
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Hero.css';
 import heroImage from '../assets/our_testing.JPG'; // Using one of the provided tech assets
 
 const Hero = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (e: React.MouseEvent, id: string, path: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', path);
+    } else {
+      navigate(path);
+    }
+  };
 
   return (
     <section id="home" className="hero">
@@ -32,6 +44,7 @@ const Hero = () => {
               <Link 
                 to="/features"
                 className="btn-primary" 
+                onClick={(e) => handleNavClick(e, 'features', '/features')}
               >
                 {t('hero.exploreBtn')}
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -41,6 +54,7 @@ const Hero = () => {
               <Link 
                 to="/contact"
                 className="btn-secondary" 
+                onClick={(e) => handleNavClick(e, 'contact', '/contact')}
               >
                 {t('hero.contactBtn')}
               </Link>
