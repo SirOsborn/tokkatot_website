@@ -8,7 +8,7 @@ const resources = {
         home: "Home",
         about: "About Us",
         features: "Features",
-        team: "Meet Our Team",
+        team: "Our People",
         contact: "Contact"
       },
       hero: {
@@ -18,10 +18,10 @@ const resources = {
         subtitle: "Bringing IoT, AI, and automation technology to small and medium-sized farms in Cambodia",
         feature1: "24/7 Monitoring",
         feature2: "AI-Powered",
-        feature3: "Locally Hosted",
+        feature3: "Edge-Ready Intelligence",
         exploreBtn: "Explore Features",
         contactBtn: "Get in Touch",
-        scrollDown: "Scroll Down"
+        scrollDown: ""
       },
       about: {
         badge: "About Us",
@@ -62,56 +62,103 @@ const resources = {
         feature4Item3: "Instant farmer alerts",
         hubTitle: "Centralized Control Hub",
         hubDesc: "All features are controlled through our locally-hosted central hub, accessible from your smartphone via our intuitive web dashboard. Monitor and control your entire farm operation from anywhere.",
-        hubTag1: "Local Hosting",
+        hubTag1: "Edge Intelligence",
         hubTag2: "Mobile Access",
         hubTag3: "Real-time Data",
-        hubTag4: "Easy Control"
+        hubTag4: "Easy Control",
+        testimonialsBadge: "Trusted by Farmers",
+        testimonialsTitle: "Real Farm Testing & Validation",
+        testimonialsSubtitle: "We don't just build technology; we validate it where it matters most—on actual Cambodian chicken farms.",
+        farmer1Quote: "Since implementing Tokkatot, my manual work has decreased by half. I can monitor my farm from my phone while I'm at the market. It gives me peace of mind.",
+        farmer1Name: "Channary S.",
+        farmer1Location: "Poultry Farmer, Kampong Speu",
+        stat1Number: "10+",
+        stat1Label: "Active Pilot Farms",
+        stat2Number: "95%",
+        stat2Label: "Accuracy in AI Detection",
+        stat3Number: "Locally",
+        stat3Label: "Designed & Supported"
       },
       team: {
-        title: "Meet Our Team",
-        subtitle: "The young passionate innovators behind Tokkatot",
+        title: "Our People",
+        subtitle: "The visionary founders and experts driving the future of Cambodian agriculture",
         member1Name: "Yung Sreyneang",
         member1Role: "Co-Founder & CEO",
-        member1Bio: "Responsible for media and PR, leading executive decisions and the overall vision to transform Cambodia's agricultural technology sector.",
-        member2Name: "Preap Somanith",
-        member2Role: "Co-Founder & CTO",
-        member2Bio: "Responsible for the technical decisions of the project and embedded systems engineering, driving the technological pillars of Tokkatot.",
+        member1Bio: "Leading executive decisions and the overall vision. Responsible for media, PR, and transforming Cambodia's agricultural technology sector.",
+        member1Email: "sreyneangyung.tokkatot@gmail.com",
+        member2Name: "Virak Rangsey",
+        member2Role: "Co-Founder & Business Lead",
+        member2Bio: "Specializes in financial budget planning and business development, ensuring sustainable growth and strategic partnerships.",
+        member2Email: "rangseyvirak.tokkatot@gmail.com",
         member3Name: "Sophea Darika",
         member3Role: "Chief Operating Officer",
-        member3Bio: "Responsible for team operations and administrative tasks. Also contributes to R&D and frontend development to support the project.",
-        member4Name: "Virak Rangsey",
-        member4Role: "Co-Founder & CFO",
-        member4Bio: "Responsible for financial budget planning and business development, ensuring sustainable growth and strategic partnerships.",
-        member5Name: "Sun Heng",
-        member5Role: "Co-Founder & AI Engineer",
-        member5Bio: "Responsible for research and development of systems, and features. Specializes in AI solutions and contributes to frontend development.",
-        member6Name: "Kaem Sreyneath",
-        member6Role: "Co-Founder & Embedded Systems Engineer",
-        member6Bio: "Specializes in embedded systems engineering, developing the core automation hardware that powers Tokkatot's smart solutions."
+        member3Bio: "Responsible for team operations, administrative tasks, and contributing to R&D and frontend development.",
+        member3Email: "darikasophea.tokkatot@gmail.com",
+        member4Name: "Sun Heng",
+        member4Role: "Co-Founder & AI Engineer",
+        member4Bio: "Leading R&D for AI systems and features. Specializes in intelligent solutions and high-performance frontend development.",
+        member4Email: "hengsun.tokkatot@gmail.com",
+        member5Name: "Kaem Sreyneath",
+        member5Role: "Co-Founder & Embedded Systems Engineer",
+        member5Bio: "Developing the core automation hardware and embedded systems that power Tokkatot's smart solutions.",
+        member5Email: "sreyneathkaem.tokkatot@gmail.com"
       },
       contact: {
         title: "Get in Touch",
         subtitle: "Interested in bringing Tokkatot to your farm? We'd love to hear from you!",
         infoTitle: "Contact Information",
         infoDesc: "Reach out to our team to discuss and learn more about Tokkatot and how we can help transform your chicken farm.",
-        email: "Email",
-        phone: "Call Us!",
-        location: "Our Location",
-        locationValue: "Phnom Penh, Cambodia",
-        nameLabel: "Your Full Name",
-        emailLabel: "Your Email Address",
-        phoneLabel: "Your Phone Number",
-        messageLabel: "Your Message to us",
+        email: "Email Support",
+        emailValue: "info@tokkatot.com",
+        phone: "Consultation",
+        nameLabel: "Name",
+        emailLabel: "Email",
+        phoneLabel: "Phone",
+        messageLabel: "How can we help you?",
         sendBtn: "Send Message",
         sendingBtn: "Sending...",
-        successMsg: "Thank you for your message! We will get back to you soon.",
-        errorMsg: "Failed to send message. Please try again or contact us directly."
+        successMsg: "Message sent! We'll get back to you soon.",
+        errorMsg: "Error sending message. Please try support@tokkatot.com"
+      },
+      awards: {
+        title: "Our Achievements",
+        award1: {
+          title: "First Runner-Up - E-Gen Competition",
+          desc: "Achieved First Runner-Up in the E-Gen Competition Program organized by the Ministry of Youth, Sport, and Education.",
+          date: "April 2025"
+        },
+        award2: {
+          title: "First Place - UnipreneurCamp",
+          desc: "Won First Place at UnipreneurCamp Cluster 1 – Season 3, organized by Khmer Enterprise.",
+          date: "July 2025"
+        },
+        award3: {
+          title: "Emerging Innovator Award",
+          desc: "Selected among 8 teams out of hundreds across Cambodia to receive the Emerging Innovator Award from Khmer Enterprise.",
+          date: "October 2025"
+        },
+        award4: {
+          title: "Best Pitching Award",
+          desc: "Represented CamTech University and Cambodia at UNIC Demo Day 2025 and received the Best Pitching Award.",
+          date: "December 2, 2025"
+        },
+        award5: {
+          title: "ActSmart Incubation Program",
+          desc: "Selected as one of the Top 9 teams for the three-month incubation program organized by the AUPP Technology Center.",
+          date: "Nov 2025 - Present"
+        }
       },
       footer: {
-        tagline: "Empowering Cambodian farmers with smart automation technology with Tokkatot.",
-        quickLinks: "Quick Links",
-        followUs: "Follow Us",
-        copyright: "© 2025 Tokkatot. All rights reserved. Made with love in Cambodia."
+        tagline: "Empowering Cambodian farmers with smart automation technology.",
+        quickLinks: "Platform",
+        company: "Company",
+        legal: "Legal",
+        privacy: "Privacy Policy",
+        terms: "Terms & Conditions",
+        support: "Support",
+        helpCenter: "Help Center",
+        followUs: "Connect",
+        copyright: "© 2026 Tokkatot. All rights reserved."
       }
     }
   },
@@ -121,7 +168,7 @@ const resources = {
         home: "ទំព័រដើម",
         about: "អំពីពួកយើង",
         features: "មុខងារ",
-        team: "ជួបជាមួយក្រុមយើង",
+        team: "ក្រុមការងារ",
         contact: "ទំនាក់ទំនង"
       },
       hero: {
@@ -131,10 +178,10 @@ const resources = {
         subtitle: "នាំមកកាន់កសិដ្ឋានចិញ្ចឹមមាន់ខ្នាតតូច និងមធ្យមនៅកម្ពុជា​​ ជាមួយបច្ចេកវិទ្យា IoT, AI និងស្វ័យប្រវត្តិកម្ម",
         feature1: "ដំណើរការត្រួតពិនិត្យ ២៤/៧",
         feature2: "ដំណើរការដោយបច្ចេកវិទ្យា AI",
-        feature3: "ដំណើរការដោយគ្មានអ៊ីនធឺណិត",
+        feature3: "បច្ចេកវិទ្យាបញ្ជាផ្ទាល់ (Edge Intelligence)",
         exploreBtn: "ស្វែងយល់មុខងាររបស់យើងបន្ថែម",
         contactBtn: "ទាក់ទងមកពួកយើង",
-        scrollDown: "អូសចុះក្រោម"
+        scrollDown: ""
       },
       about: {
         badge: "អំពីពួកយើង",
@@ -178,53 +225,100 @@ const resources = {
         hubTag1: "ដាក់ដំណើរការដោយមិនត្រូវការអ៊ីនធឺណិត",
         hubTag2: "អាចចូលប្រើបានតាមទូរស័ព្ទដៃ",
         hubTag3: "ទិន្នន័យពេលវេលាជាក់ស្តែង",
-        hubTag4: "ងាយស្រួលក្នុងការគ្រប់គ្រង"
+        hubTag4: "ងាយស្រួលក្នុងការគ្រប់គ្រង",
+        testimonialsBadge: "ទំនុកចិត្តពីកសិករ",
+        testimonialsTitle: "ការសាកល្បង និងបញ្ជាក់ផ្ទាល់ពីកសិដ្ឋាន",
+        testimonialsSubtitle: "យើងមិនត្រឹមតែបង្កើតបច្ចេកវិទ្យាប៉ុណ្ណោះទេ ប៉ុន្តែយើងបានចុះអនុវត្តផ្ទាល់នៅតាមកសិដ្ឋានចិញ្ចឹមមាន់ក្នុងស្រុក។",
+        farmer1Quote: "ចាប់តាំងពីប្រើ តុក្កតត មក ការងាររបស់ខ្ញុំបានកាត់បន្ថយពាក់កណ្តាល។ ខ្ញុំអាចតាមដានកសិដ្ឋានពីទូរស័ព្ទបាន ទោះបីជានៅផ្សារក៏ដោយ។ វាធ្វើឱ្យខ្ញុំអស់បារម្ភ។",
+        farmer1Name: "ចាន់ណារី ស.",
+        farmer1Location: "កសិករចិញ្ចឹមមាន់, ខេត្តកំពង់ស្ពឺ",
+        stat1Number: "១០+",
+        stat1Label: "កសិដ្ឋានសាកល្បង",
+        stat2Number: "៩៥%",
+        stat2Label: "ភាពត្រឹមត្រូវនៃ AI",
+        stat3Number: "ក្នុងស្រុក",
+        stat3Label: "រៀបចំ និងគាំទ្រដោយផ្ទាល់"
       },
       team: {
-        title: "ជួបជាមូយក្រុមរបស់ពួកយើង",
-        subtitle: "ជាអ្នកច្នៃប្រឌិតវ័យក្មេងដែលមានក្ដីស្រមៃ នៅពីក្រោយ តុក្កតត",
+        title: "ក្រុមការងាររបស់ពួកយើង",
+        subtitle: "យុវជនខ្មែរដែលមានចក្ខុវិស័យ និងជំនាញ ដើម្បីអនាគតកសិកម្មកម្ពុជា",
         member1Name: "យង់ ស្រីនាង",
-        member1Role: "សហស្ថាបនិក និងនាយកប្រតិបត្តិ",
-        member1Bio: "ទទួលខុសត្រូវផ្នែកប្រព័ន្ធផ្សព្វផ្សាយ និងទំនាក់ទំនងសាធារណៈ ផ្ដល់ការសម្រេចចិត្តប្រតិបត្តិការ និងទស្សនៈវិស័យក្នុងការកែប្រែវិស័យបច្ចេកវិទ្យាកសិកម្មនៅកម្ពុជា។",
-        member2Name: "ព្រាប សុម៉ានិត",
-        member2Role: "សហស្ថាបនិក និងនាយកផ្នែកបច្ចេកវិទ្យា",
-        member2Bio: "ទទួលខុសត្រូវ និងផ្ដល់ការសម្រេចចិត្តផ្នែកបច្ចេកទេសនៃគម្រោង និងជាស្នូលវិស្វកម្មប្រព័ន្ធបង្កប់ជំរុញដល់វឌ្ឍនភាពបច្ចេកវិទ្យានៃតុក្កតត។",
+        member1Role: "សហស្ថាបនិក និងនាយិកាប្រតិបត្តិ",
+        member1Bio: "ដឹកនាំការសម្រេចចិត្តប្រតិបត្តិ និងទស្សនវិស័យរួម។ ទទួលខុសត្រូវលើប្រព័ន្ធផ្សព្វផ្សាយ ទំនាក់ទំនងសាធារណៈ និងការផ្លាស់ប្តូរវិស័យបច្ចេកវិទ្យាកសិកម្មកម្ពុជា។",
+        member1Email: "sreyneangyung.tokkatot@gmail.com",
+        member2Name: "វីរៈ រង្សី",
+        member2Role: "សហស្ថាបនិក និងប្រធានផ្នែកអាជីវកម្ម",
+        member2Bio: "ឯកទេសផ្នែកផែនការថវិកាហិរញ្ញវត្ថុ និងការអភិវឌ្ឍអាជីវកម្ម ធានានូវការរីកចម្រើនប្រកបដោយនិរន្តរភាព និងភាពជាដៃគូយុទ្ធសាស្ត្រ។",
+        member2Email: "rangseyvirak.tokkatot@gmail.com",
         member3Name: "សុភា ដារិកា",
-        member3Role: "នាយ​​កផ្នែកប្រតិបត្តិការ",
-        member3Bio: "ទទួលខុសត្រូវផ្នែកប្រតិបត្តិការ​ និងកិច្ចការរដ្ឋបាលរបស់ក្រុម​ ក៏ដូចជារួមចំណែកក្នុងការស្រាវជ្រាវ និងអភិវឌ្ឍន៍​ផ្ទៃផ្នែកខាងមុខនៃប្រព័ន្ធគ្រប់រគ្រងរបស់តុក្កតត។",
-        member4Name: "វីរៈ​ រង្សី",
-        member4Role: "សហស្ថាបនិក និងនាយកផ្នែកហិរញ្ញវត្ថុ",
-        member4Bio: "ទទួលខុសត្រូវផ្នែកផែនការហិរញ្ញវត្ថុ និងការអភិវឌ្ឍន៍អាជីវកម្ម ធានាការរីកចម្រើនប្រកបដោយនិរន្តរភាពនៃតុក្កតត។",
-        member5Name: "ស៊ុន ហេង",
-        member5Role: "សហស្ថាបនិក និងវិស្វករបញ្ញាសិប្បនិម្មិត",
-        member5Bio: "ទទួលខុសត្រូវខាងផ្នែកស្រាវជ្រាវការអភិវឌ្ឍន៍នៃប្រព័ន្ធបច្ចេកវិទ្យា​ និងមុខងារថ្មីៗ ឯកទេសខាងផ្នែកបញ្ញាសិប្បនិម្មិតនៃតុក្កតត។",
-        member6Name: "កែម ស្រីនាថ",
-        member6Role: "សហស្ថាបនិក និងវិស្វករប្រព័ន្ធបង្កប់",
-        member6Bio: "ឯកទេសផ្នែកវិស្វកម្មប្រព័ន្ធបង្កប់ ទទួលខុសត្រូវក្នុងការអភិវឌ្ឍផ្នែករឹងនៃស្វ័យប្រវត្តិកម្មដែលជាស្នលមានឥទ្ធិពលដល់ដំណេាះស្រាយឆ្លាតវៃរបស់តុក្កតត។"
+        member3Role: "ប្រធានផ្នែកប្រតិបត្តិការ",
+        member3Bio: "ទទួលខុសត្រូវលើប្រតិបត្តិការក្រុម កិច្ចការរដ្ឋបាល និងរួមចំណែកក្នុងការស្រាវជ្រាវ និងអភិវឌ្ឍន៍ផ្ទៃផ្នែកខាងមុខនៃប្រព័ន្ធ។",
+        member3Email: "darikasophea.tokkatot@gmail.com",
+        member4Name: "ស៊ុន ហេង",
+        member4Role: "សហស្ថាបនិក និងវិស្វករបញ្ញាសិប្បនិម្មិត",
+        member4Bio: "ដឹកនាំការស្រាវជ្រាវ និងអភិវឌ្ឍន៍សម្រាប់ប្រព័ន្ធ និងមុខងារ AI។ ឯកទេសលើដំណោះស្រាយឆ្លាតវៃ និងការអភិវឌ្ឍន៍ផ្ទៃផ្នែកខាងមុខដែលមានប្រសិទ្ធភាពខ្ពស់។",
+        member4Email: "hengsun.tokkatot@gmail.com",
+        member5Name: "កែម ស្រីនាថ",
+        member5Role: "សហស្ថាបនិក និងវិស្វករប្រព័ន្ធបង្កប់",
+        member5Bio: "អភិវឌ្ឍផ្នែករឹងស្វ័យប្រវត្តិកម្ម និងប្រព័ន្ធបង្កប់ដែលជាស្នូលនៃដំណោះស្រាយឆ្លាតវៃរបស់តុក្កតត។",
+        member5Email: "sreyneathkaem.tokkatot@gmail.com"
       },
       contact: {
         title: "ទាក់ទងមកកាន់ពួកយើង",
         subtitle: "ចាប់អារម្មណ៍ក្នុងការនាំយក តុក្កតត មកកាន់កសិដ្ឋានរបស់លោកអ្នក? ពួកយើងរងចាំ និងត្រៀមខ្លួនក្នុងការឆ្លើយតបលោកអ្នកជានិច្ច!",
         infoTitle: "ព័ត៌មានទំនាក់ទំនងរបស់ពួកយើង",
         infoDesc: "ទាក់ទងមកក្រុមរបស់យើង ដើម្បីស្វែងយល់បន្ថែមអំពី តុក្កតត និងពិភាក្សាអំពីរបៀបដែលយើងអាចជួយផ្លាស់ប្តូរកសិដ្ឋានចិញ្ចឹមមាន់របស់អ្នក។",
-        email: "អ៊ីមែល",
-        phone: "លេខទូរស័ព្ទទំនាក់ទំនង",
-        location: "ទីតាំងរបស់យើង",
-        locationValue: "ក្នុងភ្នំពេញ, កម្ពុជា",
-        nameLabel: "ឈ្មោះពេញរបស់អ្នក",
-        emailLabel: "អាសយដ្ឋានអ៊ីមែលរបស់អ្នក",
-        phoneLabel: "លេខទូរស័ព្ទរបស់អ្នក",
-        messageLabel: "សាររបស់អ្នកមកកាន់ពួកយើង",
+        email: "អ៊ីមែលគាំទ្រ",
+        emailValue: "info@tokkatot.com",
+        phone: "ពិគ្រោះយោបល់",
+        nameLabel: "ឈ្មោះ",
+        emailLabel: "អ៊ីមែល",
+        phoneLabel: "លេខទូរស័ព្ទ",
+        messageLabel: "តើពួកយើងអាចជួយអ្វីដល់អ្នកបានខ្លះ?",
         sendBtn: "ផ្ញើសារ",
         sendingBtn: "កំពុងផ្ញើ...",
-        successMsg: "សូមអរគុណសម្រាប់សាររបស់អ្នក! យើងនឹងទាក់ទងទៅអ្នកឆាប់ៗនេះ។",
-        errorMsg: "បរាជ័យក្នុងការផ្ញើសារ។ សូមព្យាយាមម្តងទៀត ឬទាក់ទងមកពួកយើងដោយផ្ទាល់។"
+        successMsg: "សារត្រូវបានផ្ញើ! យើងនឹងទាក់ទងទៅអ្នកវិញឆាប់ៗ។",
+        errorMsg: "មានកំហុសក្នុងការផ្ញើសារ។ សូមផ្ញើមកកាន់ support@tokkatot.com"
+      },
+      awards: {
+        title: "សមិទ្ធផលរបស់យើង",
+        award1: {
+          title: "ជ័យលាភីលេខ ២ - កម្មវិធីប្រកួតប្រជែង E-Gen",
+          desc: "ទទួលបានជ័យលាភីលេខ ២ ក្នុងកម្មវិធីប្រកួតប្រជែង E-Gen ដែលរៀបចំដោយក្រសួងអប់រំ យុវជន និងកីឡា។",
+          date: "មេសា ២០២៥"
+        },
+        award2: {
+          title: "ជ័យលាភីលេខ ១ - UnipreneurCamp",
+          desc: "ទទួលបានជ័យលាភីលេខ ១ ក្នុងកម្មវិធី UnipreneurCamp Cluster 1 – Season 3 ដែលរៀបចំដោយសហគ្រិនខ្មែរ។",
+          date: "កក្កដា ២០២៥"
+        },
+        award3: {
+          title: "ពានរង្វាន់ Emerging Innovator Award",
+          desc: "ត្រូវបានជ្រើសរើសក្នុងចំណោម ៨ ក្រុម ចេញពីក្រុមរាប់រយទូទាំងប្រទេស ដើម្បីទទួលបានពានរង្វាន់ Emerging Innovator Award ពីសហគ្រិនខ្មែរ។",
+          date: "តុលា ២០២៥"
+        },
+        award4: {
+          title: "ពានរង្វាន់ Best Pitching Award",
+          desc: "តំណាងឱ្យសាកលវិទ្យាល័យ ខេមតិច និងប្រទេសកម្ពុជា ក្នុងកម្មវិធី UNIC Demo Day 2025 និងទទួលបានពានរង្វាន់ Best Pitching Award។",
+          date: "ថ្ងៃទី ២ ខែធ្នូ ឆ្នាំ ២០២៥"
+        },
+        award5: {
+          title: "កម្មវិធីបណ្តុះបណ្តាល ActSmart",
+          desc: "ត្រូវបានជ្រើសរើសជាក្រុម Top 9 ក្នុងចំណោមក្រុមជាច្រើន សម្រាប់កម្មវិធីបណ្តុះបណ្តាលរយៈពេល ៣ ខែ រៀបចំដោយមជ្ឈមណ្ឌលបច្ចេកវិទ្យា AUPP។",
+          date: "វិច្ឆិកា ២០២៥ - បច្ចុប្បន្ន"
+        }
       },
       footer: {
-        tagline: "លើកកម្ពស់កសិករកម្ពុជា ជាមួយនឹងបច្ចេកវិទ្យាស្វ័យប្រវត្តិកម្មឆ្លាតវៃជាមួយតុក្កតត។",
-        quickLinks: "តំណភ្ជាប់រហ័ស",
-        followUs: "តាមដានយើង",
-        copyright: "©​ តុក្កតត ២០២៥។ រក្សាសិទ្ធិគ្រប់យ៉ាង។​​ បង្កើតដោយសេចក្ដីស្រឡាញ់នៅកម្ពុជា។"
+        tagline: "លើកកម្ពស់កសិករកម្ពុជា ជាមួយនឹងបច្ចេកវិទ្យាស្វ័យប្រវត្តិកម្មឆ្លាតវៃ។",
+        quickLinks: "ប្រព័ន្ធ",
+        company: "ក្រុមហ៊ុន",
+        legal: "ច្បាប់",
+        privacy: "គោលការណ៍ឯកជនភាព",
+        terms: "លក្ខខណ្ឌប្រើប្រាស់",
+        support: "ការគាំទ្រ",
+        helpCenter: "មជ្ឈមណ្ឌលជំនួយ",
+        followUs: "បណ្តាញសង្គម",
+        copyright: "© ២០២៦ តុក្កតត។ រក្សាសិទ្ធិគ្រប់យ៉ាង។"
       }
     }
   },
@@ -234,7 +328,7 @@ const resources = {
         home: "首页",
         about: "关于我们",
         features: "功能",
-        team: "团队",
+        team: "我们的团队",
         contact: "联系我们"
       },
       hero: {
@@ -294,50 +388,85 @@ const resources = {
         hubTag4: "易于控制"
       },
       team: {
-        title: "认识我们的团队",
-        subtitle: "Tokkatot背后充满激情的学生和创新者",
+        title: "我们的团队",
+        subtitle: "推动柬埔寨农业未来的远见卓识的创始人和专家",
         member1Name: "Yung Sreyneang",
         member1Role: "联合创始人兼首席执行官",
         member1Bio: "负责媒体和公关，领导执行决策和整体愿景，致力于改变柬埔寨的农业技术领域。",
-        member2Name: "Preap Somanith",
-        member2Role: "联合创始人兼首席技术官",
-        member2Bio: "负责项目的技术决策和嵌入式系统工程，推动Tokkatot的技术支柱。",
+        member1Email: "sreyneangyung.tokkatot@gmail.com",
+        member2Name: "Virak Rangsey",
+        member2Role: "联合创始人兼业务主管",
+        member2Bio: "负责财务预算规划和业务发展，确保可持续增长和战略合作伙伴关系。",
+        member2Email: "rangseyvirak.tokkatot@gmail.com",
         member3Name: "Sophea Darika",
-        member3Role: "首席运营官",
+        member3Role: "运营总监",
         member3Bio: "负责团队运营和行政任务。参与研发和前端开发以支持项目。",
-        member4Name: "Virak Rangsey",
-        member4Role: "联合创始人兼首席财务官",
-        member4Bio: "负责财务预算规划和业务发展，确保可持续增长和战略合作伙伴关系。",
-        member5Name: "Sun Heng",
-        member5Role: "联合创始人兼AI工程师",
-        member5Bio: "负责硬件、系统和功能的研发。专注于AI解决方案并参与前端开发。",
-        member6Name: "Kaem Sreyneath",
-        member6Role: "联合创始人兼嵌入式系统工程师",
-        member6Bio: "专注于嵌入式系统工程，开发支持Tokkatot智能解决方案的核心自动化硬件。"
+        member3Email: "darikasophea.tokkatot@gmail.com",
+        member4Name: "Sun Heng",
+        member4Role: "联合创始人兼AI工程师",
+        member4Bio: "负责硬件、系统和功能的研发。专注于AI解决方案并参与前端开发。",
+        member4Email: "hengsun.tokkatot@gmail.com",
+        member5Name: "Kaem Sreyneath",
+        member5Role: "联合创始人兼嵌入式系统工程师",
+        member5Bio: "专注于嵌入式系统工程，开发支持Tokkatot智能解决方案的核心自动化硬件。",
+        member5Email: "sreyneathkaem.tokkatot@gmail.com"
       },
       contact: {
         title: "联系我们",
         subtitle: "有兴趣将Tokkatot引入您的农场？我们很乐意听取您的意见！",
         infoTitle: "联系信息",
         infoDesc: "联系我们的团队，了解更多关于Tokkatot以及我们如何帮助改造您的养鸡场。",
-        email: "电子邮件",
-        phone: "电话 (CEO: Yung Sreyneang)",
-        location: "位置",
-        locationValue: "金边，柬埔寨",
-        nameLabel: "全名",
-        emailLabel: "电子邮件地址",
-        phoneLabel: "电话号码",
-        messageLabel: "留言",
+        email: "邮件支持",
+        emailValue: "info@tokkatot.com",
+        phone: "咨询",
+        nameLabel: "姓名",
+        emailLabel: "电子邮件",
+        phoneLabel: "电话",
+        messageLabel: "我们能为您提供什么帮助？",
         sendBtn: "发送消息",
         sendingBtn: "发送中...",
-        successMsg: "感谢您的消息！我们会尽快与您联系。",
-        errorMsg: "发送消息失败。请重试或直接联系我们。"
+        successMsg: "消息已发送！我们会尽快与您联系。",
+        errorMsg: "发送消息出错。请尝试 support@tokkatot.com"
+      },
+      awards: {
+        title: "我们的成就",
+        award1: {
+          title: "E-Gen 竞赛二等奖",
+          desc: "在青年、体育和教育总署组织的 E-Gen 竞赛计划中荣获二等奖。",
+          date: "2025年4月"
+        },
+        award2: {
+          title: "UnipreneurCamp 一等奖",
+          desc: "在由 Khmer Enterprise 组织的 UnipreneurCamp Cluster 1 – Season 3 中荣获一等奖。",
+          date: "2025年7月"
+        },
+        award3: {
+          title: "新兴创新者奖",
+          desc: "从柬埔寨数百支队伍中脱颖而出，入选前8强，并获得由 Khmer Enterprise 颁发的“新兴创新者奖”。",
+          date: "2025年10月"
+        },
+        award4: {
+          title: "最佳路演奖",
+          desc: "代表 CamTech 大学和柬埔寨参加 UNIC Demo Day 2025，并荣获“最佳路演奖”。",
+          date: "2025年12月2日"
+        },
+        award5: {
+          title: "ActSmart 入驻计划",
+          desc: "入选由 AUPP 技术中心组织的为期三个月的入驻计划的九强队伍。",
+          date: "2025年11月 - 至今"
+        }
       },
       footer: {
         tagline: "用智能自动化技术赋能柬埔寨农民。",
-        quickLinks: "快速链接",
-        followUs: "关注我们",
-        copyright: "© 2025 Tokkatot。保留所有权利。用❤️在柬埔寨制作。"
+        quickLinks: "平台",
+        company: "公司",
+        legal: "法律",
+        privacy: "隐私政策",
+        terms: "服务条款",
+        support: "支持",
+        helpCenter: "帮助中心",
+        followUs: "关注",
+        copyright: "© 2026 Tokkatot。保留所有权利。"
       }
     }
   }

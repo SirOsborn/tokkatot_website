@@ -1,17 +1,6 @@
 /* ==========================================
-   CSS Variables & Reset
+   CSS Variables & Reset (Variables moved to index.css)
    ========================================== */
-:root {
-    --primary-color: #20A39E;
-    --secondary-color: #FFBA49;
-    --accent-color: #EF5B5B;
-    --white: #FEFEFE;
-    --text-dark: #1a1a1a;
-    --text-light: #666666;
-    --background-light: #f8f9fa;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
 
 * {
     margin: 0;
@@ -24,8 +13,8 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: var(--text-dark);
+    font-family: "Mi Sans", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans Khmer", sans-serif;
+    color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -34,7 +23,7 @@ body {
 
 /* Khmer Language Font */
 html[lang="km"] body {
-    font-family: 'Kontumruy', 'Noto Sans Khmer', sans-serif;
+    font-family: "Noto Sans Khmer", sans-serif;
 }
 
 /* Chinese Language Font */
@@ -99,7 +88,7 @@ html[lang="zh"] body {
    Section Styles
    ========================================== */
 section {
-    padding: 5rem 0;
+    padding: 2rem 0;
     position: relative;
 }
 

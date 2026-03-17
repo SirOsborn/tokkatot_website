@@ -1,29 +1,84 @@
-@import url('https://fonts.googleapis.com/css2?family=Kontumruy:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Khmer:wght@100..900&display=swap');
+
+/* Fallback for Mi Sans if not available locally */
+@font-face {
+  font-family: "Mi Sans";
+  src: local("Mi Sans"), local("Xiaomi Sans"), local("HarmonyOS Sans");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Tokkatot Design System — Official Stylesheet */
+  --primary-teal: #20a39e;
+  --secondary-amber: #ffba49;
+  --accent-coral: #ef5b5b;
+  
+  /* Semantic Aliases */
+  --primary-color: var(--primary-teal);
+  --secondary-color: var(--secondary-amber);
+  --accent-color: var(--accent-coral);
+  
+  --bg-dark: #020a0a; /* True deep teal-black */
+  --text-primary: #F8FAFC;
+  --text-secondary: rgba(248, 250, 252, 0.75);
+  --text-muted: rgba(248, 250, 252, 0.5);
+  
+  /* Premium iOS-style Crystal glass */
+  --glass-bg: rgba(32, 163, 158, 0.04); 
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(24px) saturate(160%); 
+  --glass-shadow: 0 8px 32px 0 rgba(2, 10, 10, 0.8);
+  
+  --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Mi Sans", system-ui, -apple-system, BlinkMacSystemFont, "Noto Sans Khmer", sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Khmer Language Font */
-html[lang="km"] body,
-html[lang="km"] * {
-  font-family: 'Kontumruy', 'Noto Sans Khmer', sans-serif;
+/* Glassmorphism Utility Class */
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur); /* Safari support */
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-standard);
 }
 
-/* Chinese Language Font */
-html[lang="zh"] body,
-html[lang="zh"] * {
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+.glass-effect:hover {
+  border-color: rgba(32, 163, 158, 0.2);
+  background: rgba(32, 163, 158, 0.06);
 }
 
-/* English Language Font (default) */
-html[lang="en"] body,
-html[lang="en"] * {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+::selection {
+  background: var(--primary-teal);
+  color: white;
+}
+
+/* Language Overrides for better Khmer rendering */
+[lang="km"] {
+  font-family: "Noto Sans Khmer", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-standard);
+}
+
+a:visited {
+  color: inherit;
 }
 
 code {

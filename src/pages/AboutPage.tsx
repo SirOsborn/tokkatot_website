@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import './About.css';
+import '../components/About.css';
 
-const About = () => {
+const AboutPage = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="about" className="about">
+    <div className="about">
       <div className="about-background"></div>
       <div className="container">
         <div className="section-header">
@@ -109,7 +109,7 @@ const About = () => {
             <div className="about-visual-side">
               <div className="visual-card">
                 <img 
-                  src={new URL('../assets/Farmer_test_app.jpg').href} 
+                  src={new URL('../assets/our_testing.JPG', import.meta.url).href} 
                   alt="Tokkatot Testing" 
                   className="visual-image"
                 />
@@ -118,8 +118,8 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default About;
+export default AboutPage;
