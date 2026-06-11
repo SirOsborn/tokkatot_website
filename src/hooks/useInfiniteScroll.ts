@@ -1,87 +1,124 @@
-import { useRef, useEffect, useState, useCallback } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
-export const useInfiniteScroll = (autoScrollSpeed = 0.5) => {
+/**
+ * useInfiniteScroll — smooth looping carousel with user drag control
+ *
+ * @param autoScrollSpeed - pixels per frame (default 0.2 — ultra slow & readable)
+ * @param pauseOnHover    - halt auto-scroll when mouse is inside (default true)
+ */
+export const useInfiniteScroll = (autoScrollSpeed = 0.2, pauseOnHover = true) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [isPressed, setIsPressed] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeftState, setScrollLeftState] = useState(0);
+  const isDragging = useRef(false);
+  const isHovered = useRef(false);
+  const startX = useRef(0);
+  const scrollStart = useRef(0);
   const requestRef = useRef<number | null>(null);
+  const exactScrollLeft = useRef(0);
 
-  const handleLoop = useCallback(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const scrollWidth = container.scrollWidth;
-    const thirdWidth = scrollWidth / 3;
-
-    if (container.scrollLeft >= thirdWidth * 2) {
-      container.scrollLeft -= thirdWidth;
-    } else if (container.scrollLeft <= 0) {
-      container.scrollLeft += thirdWidth;
-    }
+  const getThirdWidth = useCallback(() => {
+    const c = containerRef.current;
+    if (!c) return 0;
+    return c.scrollWidth / 3;
   }, []);
 
-  const animate = useCallback(() => {
-    if (!isPressed && containerRef.current) {
-      containerRef.current.scrollLeft += autoScrollSpeed;
+  const handleLoop = useCallback(() => {
+    const c = containerRef.current;
+    if (!c) return;
+    const third = getThirdWidth();
+    // Seamlessly jump when crossing 2/3 or 0 boundary
+    if (exactScrollLeft.current >= third * 2) {
+      exactScrollLeft.current -= third;
+      c.scrollLeft = exactScrollLeft.current;
+    } else if (exactScrollLeft.current <= 0) {
+      exactScrollLeft.current += third;
+      c.scrollLeft = exactScrollLeft.current;
+    }
+  }, [getThirdWidth]);
+
+  const tick = useCallback(() => {
+    const c = containerRef.current;
+    if (c && !isDragging.current && !(pauseOnHover && isHovered.current)) {
+      // If user scrolled manually, sync exactScrollLeft
+      if (Math.abs(c.scrollLeft - exactScrollLeft.current) > 2) {
+        exactScrollLeft.current = c.scrollLeft;
+      }
+      exactScrollLeft.current += autoScrollSpeed;
+      c.scrollLeft = exactScrollLeft.current;
       handleLoop();
     }
-    requestRef.current = requestAnimationFrame(animate);
-  }, [isPressed, autoScrollSpeed, handleLoop]);
+    requestRef.current = requestAnimationFrame(tick);
+  }, [autoScrollSpeed, pauseOnHover, handleLoop]);
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (container) {
-      // Start in the middle of the triple-duplicated list
-      container.scrollLeft = container.scrollWidth / 3;
+    const c = containerRef.current;
+    if (c) {
+      // Start at the middle copy so both directions have room
+      exactScrollLeft.current = c.scrollWidth / 3;
+      c.scrollLeft = exactScrollLeft.current;
     }
-    requestRef.current = requestAnimationFrame(animate);
+    requestRef.current = requestAnimationFrame(tick);
     return () => {
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
-  }, [animate]);
+  }, [tick]);
 
+  // ── Mouse drag ──────────────────────────────────────────────
   const onMouseDown = (e: React.MouseEvent) => {
-    setIsPressed(true);
-    setStartX(e.pageX - (containerRef.current?.offsetLeft || 0));
-    setScrollLeftState(containerRef.current?.scrollLeft || 0);
+    isDragging.current = true;
+    startX.current = e.pageX - (containerRef.current?.offsetLeft ?? 0);
+    scrollStart.current = containerRef.current?.scrollLeft ?? 0;
+    if (containerRef.current) containerRef.current.style.cursor = 'grabbing';
   };
 
   const onMouseUp = () => {
-    setIsPressed(false);
+    isDragging.current = false;
+    if (containerRef.current) containerRef.current.style.cursor = 'grab';
   };
 
   const onMouseMove = (e: React.MouseEvent) => {
-    if (!isPressed || !containerRef.current) return;
+    if (!isDragging.current || !containerRef.current) return;
     e.preventDefault();
     const x = e.pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2; // Scroll speed multiplier
-    containerRef.current.scrollLeft = scrollLeftState - walk;
+    const walk = (x - startX.current) * 1.5;
+    exactScrollLeft.current = scrollStart.current - walk;
+    containerRef.current.scrollLeft = exactScrollLeft.current;
     handleLoop();
   };
 
+  const onMouseEnter = () => { isHovered.current = true; };
+  const onMouseLeave = () => {
+    isHovered.current = false;
+    isDragging.current = false;
+    if (containerRef.current) containerRef.current.style.cursor = 'grab';
+  };
+
+  // ── Touch drag ──────────────────────────────────────────────
   const onTouchStart = (e: React.TouchEvent) => {
-    setIsPressed(true);
-    setStartX(e.touches[0].pageX - (containerRef.current?.offsetLeft || 0));
-    setScrollLeftState(containerRef.current?.scrollLeft || 0);
+    isDragging.current = true;
+    startX.current = e.touches[0].pageX - (containerRef.current?.offsetLeft ?? 0);
+    scrollStart.current = containerRef.current?.scrollLeft ?? 0;
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    if (!isPressed || !containerRef.current) return;
+    if (!isDragging.current || !containerRef.current) return;
     const x = e.touches[0].pageX - containerRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    containerRef.current.scrollLeft = scrollLeftState - walk;
+    const walk = (x - startX.current) * 1.5;
+    exactScrollLeft.current = scrollStart.current - walk;
+    containerRef.current.scrollLeft = exactScrollLeft.current;
     handleLoop();
   };
+
+  const onTouchEnd = () => { isDragging.current = false; };
 
   return {
     containerRef,
     onMouseDown,
     onMouseUp,
     onMouseMove,
-    onMouseLeave: onMouseUp,
+    onMouseEnter,
+    onMouseLeave,
     onTouchStart,
     onTouchMove,
-    onTouchEnd: onMouseUp
+    onTouchEnd,
   };
 };

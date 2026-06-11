@@ -1,12 +1,14 @@
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 import '../components/Team.css';
-import yungSreyneangImg from '../assets/yung_sreyneang.png';
-import sopheaDarikaImg from '../assets/sophea_darika.png';
-import virakRangseyImg from '../assets/virak_rangsey.png';
-import sunHengImg from '../assets/sun_heng.png';
-import kaemSreyneathImg from '../assets/kaem_sreyneath.png';
 import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
+
+// WebP portraits
+import yungSreyneangImg from '../assets/yung_sreyneang.webp';
+import sopheaDarikaImg from '../assets/sophea_darika.webp';
+import virakRangseyImg from '../assets/virak_rangsey.webp';
+import sunHengImg from '../assets/sun_heng.webp';
+import kaemSreyneathImg from '../assets/kaem_sreyneath.webp';
 
 interface TeamMember {
   name: string;
@@ -14,97 +16,108 @@ interface TeamMember {
   bio: string;
   image: string;
   email?: string;
+  color: string;
 }
 
 const PeoplePage = () => {
   const { t } = useTranslation();
+  const scrollProps = useInfiniteScroll(0.2, true);
 
   const teamMembers: TeamMember[] = [
     {
-      name: "Yung Sreyneang",
-      role: "Co-founder & CEO",
+      name: 'Yung Sreyneang',
+      role: 'Co-Founder & CEO',
       bio: t('team.member1Bio'),
       image: yungSreyneangImg,
-      email: "sreyneangyung.tokkatot@gmail.com"
+      email: 'sreyneangyung.tokkatot@gmail.com',
+      color: 'teal'
     },
     {
-      name: "Virak Rangsey",
-      role: "Co-founder & Business Lead",
+      name: 'Virak Rangsey',
+      role: 'Co-Founder & Business Lead',
       bio: t('team.member2Bio'),
       image: virakRangseyImg,
-      email: "rangseyvirak.tokkatot.com"
+      email: 'virakrangsey@gmail.com',
+      color: 'amber'
     },
     {
-      name: "Sophea Darika",
-      role: "Chief Operating Officer",
+      name: 'Sophea Darika',
+      role: 'Chief Operating Officer',
       bio: t('team.member3Bio'),
       image: sopheaDarikaImg,
-      email: "darikasophea.tokkatot@gmail.com"
+      email: 'darikasophea.tokkatot@gmail.com',
+      color: 'teal'
     },
     {
-      name: "Sun Heng",
-      role: "Co-founder & AI Engineer",
+      name: 'Sun Heng',
+      role: 'Co-Founder & Technical Lead',
       bio: t('team.member4Bio'),
       image: sunHengImg,
-      email: "hengsun.tokkatot.com"
+      email: 'heng@tokkatot.com',
+      color: 'amber'
     },
     {
-      name: "Kaem Sreyneath",
-      role: "Co-Founder & Embedded Systems Engineer",
+      name: 'Kaem Sreyneath',
+      role: 'Co-Founder & Embedded Systems',
       bio: t('team.member5Bio'),
       image: kaemSreyneathImg,
-      email: "sreyneathkaem.tokkatot@gmail.com"
-    }
+      email: 'sreyneathkaem.tokkatot@gmail.com',
+      color: 'teal'
+    },
   ];
-
-  const scrollProps = useInfiniteScroll(0.8);
-
-  useEffect(() => {
-    // Scroll handling is now handled by the browser's natural flow for simplified vertical list
-  }, []);
 
   return (
     <div className="team" id="people">
-      <div className="team-background">
-        <div className="light-beam"></div>
-      </div>
-      
+      <div className="team-bg-glow" />
+
       <div className="container">
-        <div className="section-header">
-          <span className="section-badge">{t('team.title')}</span>
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span className="section-eyebrow">{t('team.title')}</span>
           <h2 className="section-title">{t('team.title')}</h2>
           <p className="section-subtitle">{t('team.subtitle')}</p>
-        </div>
+        </motion.div>
 
-        <div 
-          className="team-rolling-container active-drag" 
-          {...scrollProps}
+        {/* Carousel — slow auto-scroll, pauses on hover, drag to read */}
+        <div
+          className="team-rolling-container"
           ref={scrollProps.containerRef}
+          onMouseDown={scrollProps.onMouseDown}
+          onMouseUp={scrollProps.onMouseUp}
+          onMouseMove={scrollProps.onMouseMove}
+          onMouseEnter={scrollProps.onMouseEnter}
+          onMouseLeave={scrollProps.onMouseLeave}
+          onTouchStart={scrollProps.onTouchStart}
+          onTouchMove={scrollProps.onTouchMove}
+          onTouchEnd={scrollProps.onTouchEnd}
         >
           <div className="team-rolling-track">
-            {/* We use 3 sets to allow smooth bi-directional "back and forth" manual scroll */}
             {[...teamMembers, ...teamMembers, ...teamMembers].map((member, index) => (
               <div
                 key={`member-${index}`}
-                className="team-member-card-horizontal glass-effect"
+                className={`team-member-card team-card-${member.color}`}
               >
-                <div className="member-portrait-top">
-                  <img src={member.image} alt={member.name} />
-                  <div className="member-overlay-info">
-                    <h3 className="member-name-horizontal">{member.name}</h3>
-                    <p className="member-role-horizontal">{member.role}</p>
-                  </div>
+                <div className="member-portrait">
+                  <img src={member.image} alt={member.name} loading="lazy" />
+                  <div className="portrait-overlay" />
+                  <div className="portrait-glow" />
                 </div>
-
-                <div className="member-details-bottom">
-                  <p className="member-bio-horizontal">{member.bio}</p>
+                <div className="member-body">
+                  <div className="member-role-badge">{member.role}</div>
+                  <h3 className="member-name">{member.name}</h3>
+                  <p className="member-bio">{member.bio}</p>
                   {member.email && (
-                    <a href={`mailto:${member.email}`} className="member-email-link">
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                        <polyline points="22,6 12,13 2,6" />
+                    <a href={`mailto:${member.email}`} className="member-email">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                        <polyline points="22,6 12,13 2,6"/>
                       </svg>
-                      {member.email}
+                      <span>{member.email}</span>
                     </a>
                   )}
                 </div>
@@ -113,6 +126,16 @@ const PeoplePage = () => {
           </div>
         </div>
 
+        {/* Hint for users */}
+        <motion.p
+          className="carousel-hint"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+        >
+          Hover to pause · Drag to explore
+        </motion.p>
       </div>
     </div>
   );

@@ -1,122 +1,140 @@
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import '../components/About.css';
+import farmValidate from '../assets/Farm_validate.webp';
+import realFarm from '../assets/Real_farm_Testing_and_Validation.webp';
+import ourTesting from '../assets/our_testing.webp';
+import revolunized from '../assets/revolunized_chicken_farm.webp';
+
+const milestones = [
+  { year: '2023', title: 'Founded', desc: 'Born as a student project at university with a mission to solve real Cambodian farming problems.' },
+  { year: '2024', title: 'First Prototype', desc: 'Built and deployed our first climate control + auto-feeding prototype on a real chicken farm.' },
+  { year: '2024', title: 'Field Validation', desc: 'Validated across multiple farm environments. Received first award at UNIIC Demo Day.' },
+  { year: '2025', title: '5+ Awards', desc: 'Won major competitions including Emerging Innovator Award, Unipreneur Camp 1st Prize, and ActSmart Incubation.' },
+];
 
 const AboutPage = () => {
   const { t } = useTranslation();
 
+  const itemVariants: any = {
+    hidden: { opacity: 0, y: 24 },
+    visible: (i: number) => ({
+      opacity: 1, y: 0,
+      transition: { delay: i * 0.12, duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }
+    })
+  };
+
   return (
-    <div className="about">
-      <div className="about-background"></div>
+    <div className="about" id="about-page">
+      <div className="about-bg">
+        <img src={revolunized} alt="" className="about-bg-img" loading="lazy" />
+        <div className="about-bg-overlay" />
+      </div>
+
       <div className="container">
-        <div className="section-header">
-          <div className="section-badge">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M10 2C10 2 15 4 15 8C15 11 13 13 10 15C7 13 5 11 5 8C5 4 10 2 10 2Z" stroke="#20A39E" strokeWidth="2" fill="none"/>
-            </svg>
-            <span>{t('about.badge') || 'Our Mission'}</span>
-          </div>
+        {/* Section Header */}
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any } }
+        >
+          <span className="section-eyebrow">{t('about.badge') || 'Our Story'}</span>
           <h2 className="section-title">{t('about.title')}</h2>
-        </div>
-        <div className="about-content">
-          <div className="about-text">
-            <h3 className="about-heading">{t('about.heading')}</h3>
+        </motion.div>
+
+        {/* Split: Text + Mission image */}
+        <div className="about-split">
+          <motion.div
+            className="about-text-side"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as any } }
+          >
+            <h3 className="about-mission-heading">{t('about.heading')}</h3>
             <div className="about-paragraphs">
               <p dangerouslySetInnerHTML={{ __html: t('about.paragraph1') }} />
               <p dangerouslySetInnerHTML={{ __html: t('about.paragraph2') }} />
             </div>
-          </div>
-          
-          <div className="about-split-layout">
-            <div className="about-cards-section">
-              <div className="cards-scroll-container">
-                <div className="cards-scroll-track">
-                  <div className="about-feature-card">
-                    <div className="feature-card-icon">
-                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                        <circle cx="28" cy="28" r="24" stroke="#20A39E" strokeWidth="2.5" fill="rgba(32, 163, 158, 0.1)"/>
-                        <path d="M28 16L20 28L28 40L36 28L28 16Z" stroke="#20A39E" strokeWidth="2.5" fill="rgba(32, 163, 158, 0.2)"/>
-                        <circle cx="28" cy="28" r="5" fill="#20A39E"/>
-                      </svg>
-                    </div>
-                    <h4>{t('about.stat1Title')}</h4>
-                    <p>{t('about.stat1Desc')}</p>
+
+            {/* Stat cards */}
+            <div className="about-stat-cards">
+              {[
+                { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>, title: t('about.stat1Title'), desc: t('about.stat1Desc'), color: 'teal' },
+                { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 16h.01M16 16h.01"/></svg>, title: t('about.stat2Title'), desc: t('about.stat2Desc'), color: 'amber' },
+                { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>, title: t('about.stat3Title'), desc: t('about.stat3Desc'), color: 'coral' },
+              ].map((stat, i) => (
+                <motion.div
+                  key={i}
+                  className={`about-stat-card stat-${stat.color}`}
+                  custom={i}
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                >
+                  <span className="stat-card-icon">{stat.icon}</span>
+                  <div>
+                    <h4>{stat.title}</h4>
+                    <p>{stat.desc}</p>
                   </div>
-                  
-                  <div className="about-feature-card">
-                    <div className="feature-card-icon">
-                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                        <rect x="12" y="12" width="32" height="32" rx="4" stroke="#FFBA49" strokeWidth="2.5" fill="rgba(255, 186, 73, 0.1)"/>
-                        <circle cx="28" cy="28" r="8" fill="#FFBA49" opacity="0.3"/>
-                        <path d="M24 28L27 31L32 26" stroke="#FFBA49" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                    <h4>{t('about.stat2Title')}</h4>
-                    <p>{t('about.stat2Desc')}</p>
-                  </div>
-                  
-                  <div className="about-feature-card">
-                    <div className="feature-card-icon">
-                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                        <path d="M28 10L18 20L18 40L38 40L38 20L28 10Z" stroke="#EF5B5B" strokeWidth="2.5" fill="rgba(239, 91, 91, 0.1)"/>
-                        <rect x="22" y="28" width="12" height="12" fill="#EF5B5B" opacity="0.3" rx="2"/>
-                        <path d="M28 22V28M22 28H34" stroke="#EF5B5B" strokeWidth="2.5" strokeLinecap="round"/>
-                      </svg>
-                    </div>
-                    <h4>{t('about.stat3Title')}</h4>
-                    <p>{t('about.stat3Desc')}</p>
-                  </div>
-                  
-                  {/* Duplicate cards for seamless loop */}
-                  <div className="about-feature-card">
-                    <div className="feature-card-icon">
-                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                        <circle cx="28" cy="28" r="24" stroke="#20A39E" strokeWidth="2.5" fill="rgba(32, 163, 158, 0.1)"/>
-                        <path d="M28 16L20 28L28 40L36 28L28 16Z" stroke="#20A39E" strokeWidth="2.5" fill="rgba(32, 163, 158, 0.2)"/>
-                        <circle cx="28" cy="28" r="5" fill="#20A39E"/>
-                      </svg>
-                    </div>
-                    <h4>{t('about.stat1Title')}</h4>
-                    <p>{t('about.stat1Desc')}</p>
-                  </div>
-                  
-                  <div className="about-feature-card">
-                    <div className="feature-card-icon">
-                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                        <rect x="12" y="12" width="32" height="32" rx="4" stroke="#FFBA49" strokeWidth="2.5" fill="rgba(255, 186, 73, 0.1)"/>
-                        <circle cx="28" cy="28" r="8" fill="#FFBA49" opacity="0.3"/>
-                        <path d="M24 28L27 31L32 26" stroke="#FFBA49" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </div>
-                    <h4>{t('about.stat2Title')}</h4>
-                    <p>{t('about.stat2Desc')}</p>
-                  </div>
-                  
-                  <div className="about-feature-card">
-                    <div className="feature-card-icon">
-                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
-                        <path d="M28 10L18 20L18 40L38 40L38 20L28 10Z" stroke="#EF5B5B" strokeWidth="2.5" fill="rgba(239, 91, 91, 0.1)"/>
-                        <rect x="22" y="28" width="12" height="12" fill="#EF5B5B" opacity="0.3" rx="2"/>
-                        <path d="M28 22V28M22 28H34" stroke="#EF5B5B" strokeWidth="2.5" strokeLinecap="round"/>
-                      </svg>
-                    </div>
-                    <h4>{t('about.stat3Title')}</h4>
-                    <p>{t('about.stat3Desc')}</p>
-                  </div>
-                </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="about-visual-side"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] as any } }
+          >
+            {/* Photo collage */}
+            <div className="about-photo-collage">
+              <div className="collage-main">
+                <img src={farmValidate} alt="Farm validation" loading="lazy" />
+              </div>
+              <div className="collage-secondary">
+                <img src={ourTesting} alt="Our testing" loading="lazy" />
+                <img src={realFarm} alt="Real farm testing" loading="lazy" />
               </div>
             </div>
-            
-            <div className="about-visual-side">
-              <div className="visual-card">
-                <img 
-                  src={new URL('../assets/Farm_validate.jpg', import.meta.url).href} 
-                  alt="Tokkatot Testing" 
-                  className="visual-image"
-                />
-              </div>
-            </div>
-          </div>
+          </motion.div>
         </div>
+
+        {/* Milestones timeline */}
+        <motion.div
+          className="milestones"
+          initial={{ opacity: 0, y: 32 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <h3 className="milestones-heading">Our Journey</h3>
+          <div className="milestones-track">
+            {milestones.map((m, i) => (
+              <motion.div
+                key={i}
+                className="milestone-item"
+                custom={i}
+                variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <div className="milestone-year">{m.year}</div>
+                <div className="milestone-dot" />
+                <div className="milestone-content">
+                  <h4>{m.title}</h4>
+                  <p>{m.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </div>
   );

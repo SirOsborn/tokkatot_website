@@ -1,4 +1,4 @@
-import i18n from 'i18next';
+﻿import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 const resources = {
@@ -9,6 +9,7 @@ const resources = {
         about: "About Us",
         features: "Features",
         team: "Our People",
+        awards: "Achievements",
         contact: "Contact"
       },
       hero: {
@@ -27,7 +28,7 @@ const resources = {
         badge: "About Us",
         title: "Who We Are",
         heading: "Revolutionizing Agriculture in Cambodia",
-        paragraph1: "Tokkatot is a local initiative born from a shared vision of a group of youths to transform Cambodia's agricultural technology landscape. Our mission is to make smart automatic technology accessible to small and medium-sized chicken farms across the country.",
+        paragraph1: "Tokkatot - តុក្កតត is a local initiative born from a shared vision of a group of youths to transform Cambodia's agricultural technology landscape. Our mission is to make smart automatic technology accessible to small and medium-sized chicken farms across the country.",
         paragraph2: "By leveraging IoT, AI, and automation, we provide affordable alternatives to expensive industrial-grade components. Our vision is to reduce dependency on imported agri-tech solutions and empower local farmers with cutting-edge technology.",
         stat1Title: "Local Innovation",
         stat1Desc: "Cambodian-made solution",
@@ -69,7 +70,7 @@ const resources = {
         testimonialsBadge: "Trusted by Farmers",
         testimonialsTitle: "Real Farm Testing & Validation",
         testimonialsSubtitle: "We don't just build technology; we validate it where it matters most—on actual Cambodian chicken farms.",
-        farmer1Quote: "Since implementing Tokkatot, my manual work has decreased by half. I can monitor my farm from my phone while I'm at the market. It gives me peace of mind.",
+        farmer1Quote: "Since implementing Tokkatot - តុក្កតត, my manual work has decreased by half. I can monitor my farm from my phone while I'm at the market. It gives me peace of mind.",
         farmer1Name: "Channary S.",
         farmer1Location: "Poultry Farmer, Kampong Speu",
         stat1Number: "10+",
@@ -85,29 +86,29 @@ const resources = {
         member1Name: "Yung Sreyneang",
         member1Role: "Co-Founder & CEO",
         member1Bio: "Leading executive decisions and the overall vision. Responsible for media, PR, and transforming Cambodia's agricultural technology sector.",
-        member1Email: "sreyneangyung.tokkatot@gmail.com",
+        member1Email: "info@tokkatot.com",
         member2Name: "Virak Rangsey",
         member2Role: "Co-Founder & Business Lead",
         member2Bio: "Specializes in financial budget planning and business development, ensuring sustainable growth and strategic partnerships.",
-        member2Email: "rangseyvirak.tokkatot@gmail.com",
+        member2Email: "info@tokkatot.com",
         member3Name: "Sophea Darika",
         member3Role: "Chief Operating Officer",
         member3Bio: "Responsible for team operations, administrative tasks, and contributing to R&D and frontend development.",
-        member3Email: "darikasophea.tokkatot@gmail.com",
+        member3Email: "info@tokkatot.com",
         member4Name: "Sun Heng",
-        member4Role: "Co-Founder & AI Engineer",
+        member4Role: "Co-Founder & Technical Lead",
         member4Bio: "Leading R&D for AI systems and features. Specializes in intelligent solutions and high-performance frontend development.",
-        member4Email: "hengsun.tokkatot@gmail.com",
+        member4Email: "info@tokkatot.com",
         member5Name: "Kaem Sreyneath",
         member5Role: "Co-Founder & Embedded Systems Engineer",
-        member5Bio: "Developing the core automation hardware and embedded systems that power Tokkatot's smart solutions.",
-        member5Email: "sreyneathkaem.tokkatot@gmail.com"
+        member5Bio: "Developing the core automation hardware and embedded systems that power Tokkatot - តុក្កតត's smart solutions.",
+        member5Email: "info@tokkatot.com"
       },
       contact: {
         title: "Get in Touch",
-        subtitle: "Interested in bringing Tokkatot to your farm? We'd love to hear from you!",
+        subtitle: "Interested in bringing Tokkatot - តុក្កតត to your farm? We'd love to hear from you!",
         infoTitle: "Contact Information",
-        infoDesc: "Reach out to our team to discuss and learn more about Tokkatot and how we can help transform your chicken farm.",
+        infoDesc: "Reach out to our team to discuss and learn more about Tokkatot - តុក្កតត and how we can help transform your chicken farm.",
         email: "Email Support",
         emailValue: "info@tokkatot.com",
         phone: "Consultation",
@@ -158,7 +159,7 @@ const resources = {
         support: "Support",
         helpCenter: "Help Center",
         followUs: "Connect",
-        copyright: "© 2026 Tokkatot. All rights reserved."
+        copyright: "© 2026 Tokkatot - តុក្កតត. All rights reserved."
       }
     }
   },
@@ -169,6 +170,7 @@ const resources = {
         about: "អំពីពួកយើង",
         features: "មុខងារ",
         team: "ក្រុមការងារ",
+        awards: "សមិទ្ធផល",
         contact: "ទំនាក់ទំនង"
       },
       hero: {
@@ -245,23 +247,23 @@ const resources = {
         member1Name: "យង់ ស្រីនាង",
         member1Role: "សហស្ថាបនិក និងនាយិកាប្រតិបត្តិ",
         member1Bio: "ដឹកនាំការសម្រេចចិត្តប្រតិបត្តិ និងទស្សនវិស័យរួម។ ទទួលខុសត្រូវលើប្រព័ន្ធផ្សព្វផ្សាយ ទំនាក់ទំនងសាធារណៈ និងការផ្លាស់ប្តូរវិស័យបច្ចេកវិទ្យាកសិកម្មកម្ពុជា។",
-        member1Email: "sreyneangyung.tokkatot@gmail.com",
+        member1Email: "info@tokkatot.com",
         member2Name: "វីរៈ រង្សី",
         member2Role: "សហស្ថាបនិក និងប្រធានផ្នែកអាជីវកម្ម",
         member2Bio: "ឯកទេសផ្នែកផែនការថវិកាហិរញ្ញវត្ថុ និងការអភិវឌ្ឍអាជីវកម្ម ធានានូវការរីកចម្រើនប្រកបដោយនិរន្តរភាព និងភាពជាដៃគូយុទ្ធសាស្ត្រ។",
-        member2Email: "rangseyvirak.tokkatot@gmail.com",
+        member2Email: "info@tokkatot.com",
         member3Name: "សុភា ដារិកា",
         member3Role: "ប្រធានផ្នែកប្រតិបត្តិការ",
         member3Bio: "ទទួលខុសត្រូវលើប្រតិបត្តិការក្រុម កិច្ចការរដ្ឋបាល និងរួមចំណែកក្នុងការស្រាវជ្រាវ និងអភិវឌ្ឍន៍ផ្ទៃផ្នែកខាងមុខនៃប្រព័ន្ធ។",
-        member3Email: "darikasophea.tokkatot@gmail.com",
+        member3Email: "info@tokkatot.com",
         member4Name: "ស៊ុន ហេង",
-        member4Role: "សហស្ថាបនិក និងវិស្វករបញ្ញាសិប្បនិម្មិត",
+        member4Role: "សហស្ថាបនិក និងប្រធានផ្នែកបច្ចេកទេស",
         member4Bio: "ដឹកនាំការស្រាវជ្រាវ និងអភិវឌ្ឍន៍សម្រាប់ប្រព័ន្ធ និងមុខងារ AI។ ឯកទេសលើដំណោះស្រាយឆ្លាតវៃ និងការអភិវឌ្ឍន៍ផ្ទៃផ្នែកខាងមុខដែលមានប្រសិទ្ធភាពខ្ពស់។",
-        member4Email: "hengsun.tokkatot@gmail.com",
+        member4Email: "info@tokkatot.com",
         member5Name: "កែម ស្រីនាថ",
         member5Role: "សហស្ថាបនិក និងវិស្វករប្រព័ន្ធបង្កប់",
         member5Bio: "អភិវឌ្ឍផ្នែករឹងស្វ័យប្រវត្តិកម្ម និងប្រព័ន្ធបង្កប់ដែលជាស្នូលនៃដំណោះស្រាយឆ្លាតវៃរបស់តុក្កតត។",
-        member5Email: "sreyneathkaem.tokkatot@gmail.com"
+        member5Email: "info@tokkatot.com"
       },
       contact: {
         title: "ទាក់ទងមកកាន់ពួកយើង",
@@ -329,6 +331,7 @@ const resources = {
         about: "关于我们",
         features: "功能",
         team: "我们的团队",
+        awards: "成就",
         contact: "联系我们"
       },
       hero: {
@@ -347,7 +350,7 @@ const resources = {
         badge: "关于我们",
         title: "关于我们",
         heading: "革新柬埔寨农业",
-        paragraph1: "Tokkatot 是一个由学生主导的项目，源于改变柬埔寨农业技术领域的共同愿景。我们让智能自动化技术惠及全国的中小型养鸡场。",
+        paragraph1: "Tokkatot - តុក្កតត 是一个由学生主导的项目，源于改变柬埔寨农业技术领域的共同愿景。我们让智能自动化技术惠及全国的中小型养鸡场。",
         paragraph2: "通过利用物联网、人工智能和自动化技术，我们提供价格实惠的替代方案，替代昂贵的工业级组件。我们的使命是减少对进口农业技术解决方案的依赖，并用尖端技术赋能当地农民。",
         stat1Title: "本地创新",
         stat1Desc: "柬埔寨制造的解决方案",
@@ -393,23 +396,23 @@ const resources = {
         member1Name: "Yung Sreyneang",
         member1Role: "联合创始人兼首席执行官",
         member1Bio: "负责媒体和公关，领导执行决策和整体愿景，致力于改变柬埔寨的农业技术领域。",
-        member1Email: "sreyneangyung.tokkatot@gmail.com",
+        member1Email: "info@tokkatot.com",
         member2Name: "Virak Rangsey",
         member2Role: "联合创始人兼业务主管",
         member2Bio: "负责财务预算规划和业务发展，确保可持续增长和战略合作伙伴关系。",
-        member2Email: "rangseyvirak.tokkatot@gmail.com",
+        member2Email: "info@tokkatot.com",
         member3Name: "Sophea Darika",
         member3Role: "运营总监",
         member3Bio: "负责团队运营和行政任务。参与研发和前端开发以支持项目。",
-        member3Email: "darikasophea.tokkatot@gmail.com",
+        member3Email: "info@tokkatot.com",
         member4Name: "Sun Heng",
-        member4Role: "联合创始人兼AI工程师",
+        member4Role: "联合创始人兼技术主管",
         member4Bio: "负责硬件、系统和功能的研发。专注于AI解决方案并参与前端开发。",
-        member4Email: "hengsun.tokkatot@gmail.com",
+        member4Email: "info@tokkatot.com",
         member5Name: "Kaem Sreyneath",
         member5Role: "联合创始人兼嵌入式系统工程师",
         member5Bio: "专注于嵌入式系统工程，开发支持Tokkatot智能解决方案的核心自动化硬件。",
-        member5Email: "sreyneathkaem.tokkatot@gmail.com"
+        member5Email: "info@tokkatot.com"
       },
       contact: {
         title: "联系我们",
@@ -466,7 +469,7 @@ const resources = {
         support: "支持",
         helpCenter: "帮助中心",
         followUs: "关注",
-        copyright: "© 2026 Tokkatot。保留所有权利。"
+        copyright: "© 2026 Tokkatot - តុក្កតត。保留所有权利。"
       }
     }
   }
